@@ -1,0 +1,439 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/y2.0.1/css/toastr.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> -->
+
+    <style>
+      .head {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        padding-top: 0.5rem;
+      }
+      .a {
+        background-color: rgb(10, 68, 67);
+        color: white;
+      }
+      .a1 {
+        color: white;
+      }
+      .a1:hover {
+        text-decoration: none;
+        color: rgb(255, 89, 0);
+      }
+
+      a {
+        text-decoration: none;
+      }
+      .lst {
+        font-size: 120%;
+        font-weight: bold;
+      }
+      .sechead {
+        display: flex;
+        color: rgb(5, 4, 8);
+        align-items: center;
+        justify-content: center;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        color: black;
+      }
+      .nav1 {
+        justify-content: space-between;
+
+        align-items: center;
+      }
+      li {
+        justify-content: space-between;
+        text-align: center;
+        margin-left: 1rem;
+        text-decoration: none;
+      }
+      li :hover {
+        text-decoration: none;
+      }
+      .btm {
+        justify-content: space-between;
+        border-radius: 10px;
+        align-items: center;
+        border: 50px black;
+        box-shadow: 0 1px 3px;
+        padding: 10px;
+      }
+      .pt {
+        font-weight: bold;
+        padding-top: 10rem;
+      }
+      .p5 {
+        padding-top: 8.5rem;
+        border-radius: 10px;
+      }
+      .imgh {
+        background-image: url("{% static 'css/854719.jpg' %}");
+        height: 75vh;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        filter: contrast(5px);
+        color: rgb(255, 255, 255);
+      }
+
+      .a2 {
+        color: rgb(10, 68, 67);
+      }
+
+      .a2:hover {
+        color: rgb(255, 89, 0);
+      }
+
+      .tab {
+        font-weight: bold;
+        font-size: 20px;
+        color: rgb(10, 68, 67);
+      }
+
+      .btn1 {
+        background-color: rgb(255, 89, 0);
+        color: white;
+        font-weight: bold;
+        border-radius: 20px;
+      }
+
+      .btn1:hover {
+        background-color: rgb(10, 68, 67);
+      }
+
+      .login-container {
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(244, 244, 244, 0);
+      }
+
+      input {
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a container-fluid">
+      <div class="head container">
+        <div class="heading">
+          <p class="">
+            BOOK ONLINE
+            <img
+              width="25"
+              height="25"
+              src="https://img.icons8.com/fluency/48/advance.png"
+              alt="advance"
+            />You can request appointment (pending confirmation) in 24 hours
+          </p>
+        </div>
+        <div>
+          <a href="#" class="a1"
+            ><img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/fluency/48/mail--v1.png"
+              alt="mail--v1"
+            />avion@domain.com</a
+          >
+          <a href="#" class="a1"
+            ><img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/fluency/48/location.png"
+              alt="location"
+            />Chennai</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="d-flex nav1 m-1">
+        <div class="sechead">
+          <img width="60" height="60" src="{% static 'css/logo.png' %}" />
+          <div class="d-flex">
+            <h2
+              style="
+                color: rgb(10, 68, 67);
+                font-weight: bold;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              Avion
+            </h2>
+            <h2
+              style="
+                font-weight: bold;
+                align-items: center;
+                justify-content: center;
+                color: rgb(255, 89, 0);
+              "
+            >
+              Health
+            </h2>
+          </div>
+        </div>
+        <div
+          class="d-flex"
+          style="align-items: center; justify-content: center"
+        >
+          <ul class="lst d-flex">
+            <li><a class="a2" href="#home">Home</a></li>
+            <li><a class="a2" href="#news">News</a></li>
+            <li><a class="a2" href="#contact">Contact</a></li>
+            <li><a class="a2" href="#about">About</a></li>
+          </ul>
+
+          <button class="btn m-2 btn1" id="signin">Sign in</button>
+
+          <button class="btn m-2 btn1" id="registeruser">Sign up</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="imgh">
+      <div class="container pt">
+        <div>
+          <h1 style="font-weight: bold">
+            The Care You Need.<br />
+            The Compassion<br />
+            You Deserve.
+          </h1>
+          <p style="color: rgb(255, 89, 0)">
+            EVERYDAY BRING HOPE AND SMILE TO THE PATIENT WE SERVE !!!
+          </p>
+          {% if user.is_authenticated %}
+          <button>make appointment</button>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="container p5">
+        <div class="btm d-flex" style="background-color: white">
+          <div class="text-center">
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/carbon-copy/100/FD7E14/last-24-hours.png"
+              alt="last-24-hours"
+            />
+            <p class="tab m-2">24/7 Express Services</p>
+          </div>
+          <div class="text-center">
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/ios/50/FD7E14/customer-insight--v1.png"
+              alt="customer-insight--v1"
+            />
+            <p class="tab m-2">15 Years Of Experience</p>
+          </div>
+          <div class="text-center">
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/wired/64/FD7E14/best-seller.png"
+              alt="best-seller"
+            />
+            <p class="tab m-2">Qualified Doctors</p>
+          </div>
+          <div class="text-center">
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/pastel-glyph/64/FD7E14/hospital--v1.png"
+              alt="hospital--v1"
+            />
+            <p class="tab m-2">Emergency Care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="signinpopup"
+      style="
+        width: 700px;
+        height: 400px;
+        background: linear-gradient(150.19deg, #cccccc 0%, #2f96b4 94.77%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        display: none;
+      "
+    >
+      <a
+        id="closepopup"
+        style="
+          text-decoration: none;
+          margin-bottom: -1px;
+          margin-left: 670px;
+          font-weight: 600;
+          font-size: 25px;
+
+          color: black;
+        "
+        href="#"
+        >X</a
+      >
+      <div class="login-container">
+        <h1 style="font-weight: bold">Login<br /></h1>
+        <form id="login-form" method="post" action="login">
+          {% csrf_token %}
+          <label style="font-weight: bold" for="username">Email:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            required
+          />
+
+          <label style="font-weight: bold" for="password">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+
+          <button
+            class="btn btn-primary mt-3"
+            style="font-weight: bold"
+            type="submit"
+          >
+            login
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      id="registeruserpopup"
+      style="
+        width: 700px;
+        height: 400px;
+        background: linear-gradient(150.19deg, #cccccc 0%, #2f96b4 94.77%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        display: none;
+      "
+    >
+      <a
+        id="closepopup1"
+        style="
+          text-decoration: none;
+          margin-bottom: -1px;
+          margin-left: 670px;
+          font-weight: 600;
+          font-size: 25px;
+
+          color: black;
+        "
+        href="#"
+        >X</a
+      >
+      <br />
+      <div class="login-container">
+        <h1 style="font-weight: bold">Sign Up</h1>
+        <form
+          method="post"
+          onsubmit="return validateEmail()"
+          action="registersuperuser"
+        >
+          {% csrf_token %}
+          <label for="username">
+            <h6 style="font-weight: bold">Email</h6></label
+          >
+          <input
+            type="text"
+            id="username1"
+            name="username1"
+            class="form-control"
+            required
+          />
+          <label for="password">
+            <h6 style="font-weight: bold">Password</h6></label
+          >
+          <input
+            type="password"
+            id="password1"
+            class="form-control"
+            name="password1"
+            required
+          /><br />
+          <button
+            id="emailvalidate"
+            class="btn btn-primary"
+            style="font-weight: bold"
+            type="submit"
+          >
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#closepopup").click(function () {
+          $("#signinpopup").slideUp();
+        });
+      });
+
+      $(document).ready(function () {
+        $("#closepopup1").click(function () {
+          $("#registeruserpopup").slideUp();
+        });
+      });
+
+      $("body").on("click", "#signin", function () {
+        $("#signinpopup").slideDown();
+      });
+
+      $("body").on("click", "#registeruser", function () {
+        $("#registeruserpopup").slideDown();
+      });
+
+      function validateEmail() {
+        const mailInput = document.getElementById("username1").value;
+        const pwdInput = document.getElementById("password1").value;
+
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (!reg.test(mailInput)) {
+          alert("Invalid Email Address");
+          return false;
+        }
+
+        if (pwdInput.length < 8) {
+          alert("Password should be atleast 8 characters");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

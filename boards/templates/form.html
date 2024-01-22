@@ -1,0 +1,570 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- <script src="{% static '/js/scripts.js' %}" type="text/javascript"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/y2.0.1/css/toastr.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    />
+
+    <style>
+      body {
+        overflow-y: visible;
+      }
+      .form_d {
+        width: 45vw;
+        height: 100%;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        padding-bottom: 5rem;
+        padding-top: .5rem;
+      margin-left: 11rem;
+      }
+
+      .head {
+        align-items: center;
+        background-color: white;
+        font-weight: bold;
+        justify-content: space-between;
+        border-radius: 30px;
+      }
+
+      .logo {
+        align-items: center;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .links {
+        justify-content: space-between;
+        display: flex;
+      }
+
+      .align-right {
+        justify-content: space-between;
+      }
+
+      .gap {
+        justify-content: space-between;
+      }
+
+      .gap1 {
+        justify-content: space-between;
+      }
+
+      .gap2 {
+        justify-content: space-between;
+      }
+
+      .gap3 {
+        justify-content: space-between;
+      }
+
+      .formlabel {
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(10, 68, 67);
+      }
+
+      .textcolor {
+        font-weight: bold;
+        font-size: 15px;
+        color: rgba(56, 55, 55, 0.911);
+      }
+
+      .btn {
+        background-color: rgb(10, 68, 67);
+        width: 80%;
+        font-weight: bold;
+        padding: 10px;
+        margin: 10px;
+      }
+      .a1 {
+        color: rgb(10, 68, 67);
+      }
+      .a1:hover {
+        text-decoration: none;
+        color: rgb(255, 89, 0);
+      }
+      .background {
+        background-image: url("{% static 'css/appoinment-background.jpg' %}");
+        background-color: #223a66; /* Overlay color */
+        background-blend-mode: multiply; /* Blend mode */
+        height: 30vh;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        filter: contrast(5px);
+        color: rgb(255, 255, 255);
+      
+      }
+      
+      .form-control{
+        background: #f4f9fc;
+        height: 55px;
+        border-color: rgba(0, 0, 0, 0.05);
+      }
+      .center {
+        justify-content: center;
+        align-items: center;
+      }
+      .text-center {
+        font-weight: bold;
+        font-size: larger;
+      }
+      .sub {
+        position: absolute;
+        bottom: 5px;
+        left: 43%;
+        right: 43%;
+        background-color: #0a0a23;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+        text-decoration: none;
+      }
+
+      .bn632-hover {
+        width: 200px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        margin: 20px;
+        height: 55px;
+        text-align: center;
+        border: none;
+        background-size: 300% 100%;
+        border-radius: 50px;
+        moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .bn632-hover:hover {
+        background-position: 100% 0;
+        moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .bn632-hover:focus {
+        outline: none;
+      }
+
+      .bn632-hover.bn26 {
+        background-image: linear-gradient(
+          to right,
+          #25aae1,
+          #4481eb
+        );
+        box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+      }
+      .head-margin{
+        margin-left: 14rem;
+      }
+
+      .bn39 {
+        background-color: rgb(255, 89, 0);
+        border-radius: 6px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: block;
+        height: 50px;
+        font-size: 1.4em;
+        font-weight: 600;
+        padding: 4px;
+        position: relative;
+        text-decoration: none;
+        width: 15em;
+        z-index: 2;
+        margin-left: 12rem;
+      }
+
+      .bn39:hover {
+        color: #fff;
+      }
+.pt-6{
+  padding-top: 4rem;
+}
+      .bn39 .bn39span {
+        align-items: center;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        transition: background 0.5s ease;
+        width: 100%;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+      .bn39:hover .bn39span {
+        background: transparent;
+      }
+      .gap-1{
+        margin-left: 4rem;
+      }
+      .gap-2{
+        margin-left:10rem;
+      }
+      .gap-3{
+        margin-left:11.7rem;
+      }
+      .box{
+        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+        font-size: small;
+        color: #0a0a23;
+        margin-left: 4rem;
+      
+      }
+    </style>
+  </head>
+  <body>
+    <div class="back">
+      <div class="p-2">
+        <div class="container">
+          <div class="head d-flex">
+            <div class="d-flex logo">
+              <img width="70" height="70" src="{% static 'css/logo.png' %}" />
+              <h2
+                style="
+                  color: rgb(10, 68, 67);
+                  font-weight: bold;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                Avion
+              </h2>
+              <h2
+                style="
+                  font-weight: bold;
+                  align-items: center;
+                  justify-content: center;
+                  color: rgb(255, 89, 0);
+                "
+              >
+                Health
+              </h2>
+            </div>
+            <div class="d-flex links">
+              <!-- <div class="m-2">
+                <a class="a1" href=''>Home</a>
+              </div> -->
+              <div class="m-2">
+                <a class="a1" href="#contact">Contact</a>
+              </div>
+              <div class="m-2">
+                <a class="a1" href="#news">News</a>
+              </div>
+              <div class="m-2">
+                <a class="a1" href="#About">About</a>
+              </div>
+              <div class="m-2">
+                <a class="a1" href="">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center background">
+        <h1
+          style="
+            font-weight: bolder;
+            color: white;
+          "
+          class="pt-6"
+        >
+          Appointment
+        </h1>
+      </div>
+      <div class="">
+        <div class="container d-flex mt-5 justify">
+          <div>
+            <img
+            width="75"
+            height="75"
+            src="https://img.icons8.com/ios/50/FD7E14/customer-insight--v1.png"
+            alt="customer-insight--v1"
+          />
+            <h1 style="font-weight: bold; color:rgb(10, 68, 67);" class="mt-3">
+              Book Your<br>
+              Appointment Today
+            </h1>
+          </div>
+          <div class="center mt-4">
+            <div class="head-margin">
+              <h2 style="font-weight: bold; color:rgba(203, 73, 4, 0.893);" >Make an appointment</h2>
+            </div>
+            <form
+              method="post"
+              action="{% url 'form' %}"
+              class="form_d "
+              id="form"
+              onsubmit="return validateAge()"
+            >
+              {% csrf_token %}
+              <div class="content">
+                <div class="">
+                  <label for="name" class="formlabel">Full Name:</label>
+                  <br />
+                  <input
+                    type="text"
+                    class="p-1 form-control"
+                    name="name"
+                    placeholder="Full Name"
+                    required
+                  />
+                </div>
+                <div class="d-flex mt-3">
+                  <div>
+                    <label for="age" class="formlabel">Age:</label><br />
+                    <input
+                      type="number"
+                      style="width: 15vw"
+                      class="p-1 form-control"
+                      id="age"
+                      name="age"
+                      placeholder="Age"
+                      required
+                    />
+                  </div>
+                  <div class="gap-1">
+                    <label for="Gender" class="formlabel">Gender:</label><br />
+                    <div class="ps-4 textcolor">
+                      <input
+                        type="radio"
+                        class="textcolor"
+                        name="gender"
+                        value="Male"
+                        required
+                      />Male<br />
+                      <input
+                        type="radio"
+                        class="textcolor"
+                        name="gender"
+                        value="Female"
+                        required
+                      />Female
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div>
+                    <label for="hypertension" class="formlabel"
+                      >Hypertension:</label
+                    ><br />
+                    <div class="ps-5 textcolor">
+                      <input
+                        type="radio"
+                        class="column"
+                        name="hypertension"
+                        value=1
+                        required
+                      />Yes
+                      <input
+                        type="radio"
+                        class="column"
+                        name="hypertension"
+                        value=0
+                        required
+                      />No
+                    </div>
+                  </div>
+                  <div class="gap-2">
+                    <label for="Diabetes" class="formlabel">Diabetes: </label
+                    ><br />
+                    <div class="ps-5 textcolor">
+                      <input
+                        type="radio"
+                        class="column"
+                        name="diabetes"
+                        value=1
+                        required
+                      />Yes
+                      <input
+                        type="radio"
+                        class="column"
+                        name="diabetes"
+                        value=0
+                        required
+                      />No
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex mt-3">
+                  <div>
+                    <label for="alcoholism" class="formlabel">Alcoholism:</label
+                    ><br />
+                    <div class="ps-5 textcolor">
+                      <input
+                        type="radio"
+                        class="column"
+                        name="alcoholism"
+                        value=1
+                        required
+                      />Yes
+                      <input
+                        type="radio"
+                        class="column"
+                        name="alcoholism"
+                        value=0
+                        required
+                      />No
+                    </div>
+                  </div>
+                  <div class="gap-3">
+                    <label for="handicap" class="formlabel">Handicap:</label
+                    ><br />
+                    <div class="ps-5 textcolor">
+                      <input
+                        type="radio"
+                        class=""
+                        name="handicap"
+                        value=1
+                        required
+                      />Yes
+                      <input
+                        type="radio"
+                        class=""
+                        name="handicap"
+                        value=0
+                        required
+                      />No
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex gap mt-3">
+                  <div>
+                    <label for="Appointment_Day" class="formlabel"
+                      >Appointment_Day</label
+                    ><br />
+
+                    <input
+                      type="date"
+                      name="Appointment_Day"
+                      class="form-control"
+                      style="width: 15vw"
+                      required
+                    />
+                  </div>
+                  <div class="">
+                    <label for="Clinic_Location" class="formlabel"
+                      >Clinic_Location:</label
+                    ><br />
+                    <select
+                      name="Clinic_Location"
+                      class="form-control "
+                      style="width: 15vw"
+                      required
+                    >
+                      <option value="choose one">choose one</option>
+                      <option value="Noida">Noida</option>
+                      <option value="Bengaluru">Bengaluru</option>
+                      <option value="Chennai">Chennai</option>
+                      <option value="Pune">Pune</option>
+                      <option value="Coimbatore">Coimbatore</option>
+                    </select>
+                  </div>
+                </div>
+                {{ form.as_p }}
+                <div class="mt-3 text-center">
+                  <button
+                    name="submit"
+                    id="submit"
+                    class="btn btn-primary"
+                    type="submit"
+                  >
+                    submit</button
+                  ><br />
+                </div>
+               
+                
+              </div>
+            </form>
+            {% if success %}
+              <p>
+                <script>
+                  alert("Your form was submitted successfully.");
+                  document.getElementById("form").style.display = "none";
+                </script>
+
+                <div id="slotpopup" class="m-5 d-flex">
+                  {% if 'will' in result %}
+                  <div class="box text-center alert-danger">
+                    <h4>{{ result }}</h4>
+                  </div>
+                  {% else %}
+                  {%for slot in result %}
+                  <button class="bn632-hover bn26" onclick="slotValue(this)">{{slot}}</button>                
+                  {% endfor %}
+                {% endif %}
+                </div>
+                  <div class="text-center m-3">
+                    <a class="bn39" href="chart"
+                      ><span class="bn39span">Model Explainability</span></a
+                    >
+                  </div>
+                 </p>
+                {% endif %}
+            
+                <script>
+                  function slotValue(button) {
+                    const slotValue = button.innerText;
+                    alert("Your appointment is booked on " + slotValue);
+                  }
+                </script>
+                
+            <script>
+              
+              function validateAge() {
+                const slotpopup = document.getElementById("slotpopup");
+                const slot = document.getElementById("slot");
+
+                const form = document.getElementById("form");
+                const ageInput = parseInt(
+                  document.getElementById("age").value,
+                  10
+                );
+
+                if (isNaN(ageInput) || ageInput <= 0 || ageInput >= 120) {
+                  alert("Invalid age. Please enter a valid age.");
+                  return false;
+                } else {
+                  console.log("Age is valid. Showing slotpopup.");
+                  
+                  return true;
+                }
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
